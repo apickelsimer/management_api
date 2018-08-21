@@ -1,0 +1,4312 @@
+---
+openapi: 3.0.0
+servers:
+  - url: https://api.enterprise.apigee.com/v1
+info:
+  description: As an alternative to managing your Edge organization with the management UI, you can manage it using a RESTful API called the Edge management API. That means you can use the API to create, configure, and manage API proxies and API products, create and manage apps and app developers, and to perform many other types of operations programmatically, using any HTTP client. The API resources exposed by the Edge management API support JSON and XML, and are secured using HTTP Basic Authentication and OAuth.
+  version: 0.0.1
+  title: Apigee Management APIs
+  contact:
+    email: support@apigee.com
+security:
+  - basic: []
+  - oauth2: []
+paths:
+  "/organizations/{org_name}/apis/{api_name}/maskconfigs":
+    get:
+      tags: ["Mask Config"]
+      summary: List Data Masks for an API Proxy
+      description: List Data Masks for an API Proxy
+      operationId: 'ListDataMask'
+      parameters:
+        - $ref: '#/components/parameters/org_name'
+        - $ref: '#/components/parameters/api_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    post:
+      tags: ["Mask Config"]
+      summary: Create Data Masks for an API Proxy
+      description: Create Data Masks for an API Proxy
+      operationId: 'CreateDataMask'
+      parameters:
+        - $ref: '#/components/parameters/org_name'
+        - $ref: '#/components/parameters/api_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/apis/{api_name}/maskconfigs/{maskconfig_name}":
+    get:
+      tags: ["Mask Config"]
+      summary: Get Data Mask Details for an API Proxy
+      description: Get Data Mask Details for an API Proxy
+      operationId: 'GetDataMaskDetailsAPIProxy'
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/api_name'
+      - $ref: '#/components/parameters/maskconfig_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    delete:
+      tags: ["Mask Config"]
+      summary: Delete Data Masks for an API Proxy
+      description: Delete Data Masks for an API Proxy
+      operationId: 'DeleteDataMaskAPIProxy'
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/api_name'
+      - $ref: '#/components/parameters/maskconfig_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/maskconfigs":
+    get:
+      tags: ["Mask Config"]
+      summary: List Data Masks for an Organization
+      description: List Data Masks for an Organization
+      operationId: 'ListDataMarkOrg'
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    post:
+      tags: ["Mask Config"]
+      summary: Create Data Masks for an Organization
+      description: Create Data Masks for an Organization
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/maskconfigs/{maskconfig_name}":
+    get:
+      tags: ["Mask Config"]
+      summary: Get Data Mask Details for an Organization
+      description: Get Data Mask Details for an Organization
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/maskconfig_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    delete:
+      tags: ["Mask Config"]
+      summary: Delete Data Masks for an Organization
+      description: Delete Data Masks for an Organization
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/maskconfig_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/apiproducts":
+    post:
+      tags: ["API Product"]
+      summary: Create API Product
+      description: Create API Product
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["API Product"]
+      summary: List API Products
+      description: List API Products
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/apiproducts/{apiproduct_name}":
+    get:
+      tags: ["API Product"]
+      summary: Get API Product
+      description: Get API Product
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/apiproduct_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    put:
+      tags: ["API Product"]
+      summary: Update API Product
+      description: Update API Product
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/apiproduct_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    delete:
+      tags: ["API Product"]
+      summary: Delete API Product
+      description: Delete API Product
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/apiproduct_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/apiproducts/{apiproduct_name}/attributes":
+    post:
+      tags: ["API Product"]
+      summary: Updates all API Product Attributes
+      description: Updates all API Product Attributes
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/apiproduct_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/apiproducts/{apiproduct_name}/attributes/{attribute_name}":
+    post:
+      tags: ["API Product"]
+      summary: Updates API Product Attribute
+      description: Updates API Product Attribute
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/apiproduct_name'
+      - $ref: '#/components/parameters/attribute_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    delete:
+      tags: ["API Product"]
+      summary: Delete API Product Attribute
+      description: Delete API Product Attribute
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/apiproduct_name'
+      - $ref: '#/components/parameters/attribute_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["API Product"]
+      summary: Get API Product Attribute
+      description: Get API Product Attribute
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/apiproduct_name'
+      - $ref: '#/components/parameters/attribute_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environments/{env_name}/apis/{api_name}/cachedlogs/categories":
+    get:
+      tags: ["Cached Log"]
+      summary: Get Cached Log Categories
+      description: Get Cached Log Categories
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/api_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environments/{env_name}/apis/{api_name}/cachedlogs/categories/nodejs":
+    get:
+      tags: ["Cached Log"]
+      summary: Get Cached Logs
+      description: Get Cached Logs
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/api_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/oauth2/accesstokens/{access_token}":
+    delete:
+      tags: ["OAuth 2.0"]
+      summary: Delete OAuth 2.0 Access Token
+      description: Delete OAuth 2.0 Access Token
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/access_token'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    post:
+      tags: ["OAuth 2.0"]
+      summary: Update OAuth 2.0 Access Token
+      description: Update OAuth 2.0 Access Token
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/access_token'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["OAuth 2.0"]
+      summary: Get OAuth 2.0 Access Token
+      description: Get OAuth 2.0 Access Token
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/access_token'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/oauth2/revoke":
+    post:
+      tags: ["OAuth 2.0"]
+      summary: Revoke OAuth2 Access Token by End User or App ID
+      description: Revoke OAuth2 Access Token by End User or App ID
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/oauth2/search":
+    get:
+      tags: ["OAuth 2.0"]
+      summary: Get OAuth2 Access Token by End User or App ID
+      description: Get OAuth2 Access Token by End User or App ID
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environment/{env_name}/keystores/{keystore_name}/aliases/{alias_name}":
+    get:
+      tags: ["Keystore"]
+      summary: Get keystore alias
+      description: Get keystore alias
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/keystore_name'
+      - $ref: '#/components/parameters/alias_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environments/{env_name}/keystores":
+    post:
+      tags: ["Keystore","Truststore"]
+      summary: Create a Keystore or Truststore
+      description: Create a Keystore or Truststore
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["Keystore","Truststore"]
+      summary: List Keystores and Truststores
+      description: List Keystores and Truststores
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environments/{env_name}/keystores/{keystore_name}":
+    delete:
+      tags: ["Keystore","Truststore"]
+      summary: Delete a Keystore or Truststore
+      description: Delete a Keystore or Truststore
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/keystore_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["Keystore","Truststore"]
+      summary: Get a Keystore or Truststore
+      description: Get a Keystore or Truststore
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/keystore_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environments/{env_name}/keystores/{keystore_name}/aliases":
+    post:
+      tags: ["Keystore","Truststore"]
+      summary: Create an alias from a JAR or PKCS file
+      description: Create an alias from a JAR or PKCS file
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/keystore_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["Keystore","Truststore"]
+      summary: List keystore aliases
+      description: List aliases
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/keystore_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environments/{env_name}/keystores/{keystore_name}/aliases/{alias_name}":
+    put:
+      tags: ["Keystore","Truststore"]
+      summary: Update the certificate in an alias
+      description: Update the certificate in an alias
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/keystore_name'
+      - $ref: '#/components/parameters/alias_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    delete:
+      tags: ["Keystore","Truststore"]
+      summary: Delete alias
+      description: Delete alias
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/keystore_name'
+      - $ref: '#/components/parameters/alias_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environments/{env_name}/keystores/{keystore_name}/aliases/{alias_name}/certificate":
+    get:
+      tags: ["Keystore","Truststore"]
+      summary: Export a certificate for an alias
+      description: Export a certificate for an alias
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/keystore_name'
+      - $ref: '#/components/parameters/alias_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environments/{env_name}/keystores/{keystore_name}/aliases/{alias_name}/csr":
+    get:
+      tags: ["Keystore","Truststore"]
+      summary: Generate a CSR for an alias
+      description: Generate a CSR for an alias
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/keystore_name'
+      - $ref: '#/components/parameters/alias_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environments/{env_name}/keystores/{keystore_name}/certs":
+    get:
+      tags: ["Keystore","Truststore"]
+      summary: Get all certificates for a keystore or truststore
+      description: Get all certificates for a keystore or truststore
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/keystore_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    post:
+      tags: ["Keystore","Truststore"]
+      summary: Upload a Certificate to a Truststore
+      description: Upload a Certificate to a Truststore
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/keystore_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environments/{env_name}/keystores/{keystore_name}/certs/{cert_name}":
+    delete:
+      tags: ["Keystore","Truststore"]
+      summary: Delete Cert from a Keystore or Truststore
+      description: Delete Cert from a Keystore or Truststore
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/keystore_name'
+      - $ref: '#/components/parameters/cert_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["Keystore","Truststore"]
+      summary: Get Cert Details from a Keystore or Truststore
+      description: Get Cert Details from a Keystore or Truststore
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/keystore_name'
+      - $ref: '#/components/parameters/cert_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environments/{env_name}/keystores/{keystore_name}/certs/{cert_name}/export":
+    get:
+      tags: ["Keystore","Truststore"]
+      summary: Export a Certificate from a Keystore or Truststore
+      description: Export a Certificate from a Keystore or Truststore
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/keystore_name'
+      - $ref: '#/components/parameters/cert_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environments/{env_name}/keystores/{keystore_name}/keys":
+    post:
+      tags: ["Keystore","Truststore"]
+      summary: Upload a JAR file to a Keystore
+      description: Upload a JAR file to a Keystore
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/keystore_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/apis/{api_name}/revisions/{revision_number}/resourcefiles":
+    post:
+      tags: ["Resource Files"]
+      summary: Import a resource file for an API (file upload)
+      description: Import a resource file for an API (file upload)
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/api_name'
+      - $ref: '#/components/parameters/revision_number'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["Resource Files"]
+      summary: List resource files in an API
+      description: List resource files in an API
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/api_name'
+      - $ref: '#/components/parameters/revision_number'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/apis/{api_name}/revisions/{revision_number}/resourcefiles/{resource_type}/{resource_name}":
+    put:
+      tags: ["Resource Files"]
+      summary: Update a resource file in an API (file upload)
+      description: Update a resource file in an API (file upload)
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/api_name'
+      - $ref: '#/components/parameters/revision_number'
+      - $ref: '#/components/parameters/resource_type'
+      - $ref: '#/components/parameters/resource_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    delete:
+      tags: ["Resource Files"]
+      summary: Delete a resource file from an API
+      description: Delete a resource file from an API
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/api_name'
+      - $ref: '#/components/parameters/revision_number'
+      - $ref: '#/components/parameters/resource_type'
+      - $ref: '#/components/parameters/resource_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["Resource Files"]
+      summary: Get a resource file from an API
+      description: Get a resource file from an API
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/api_name'
+      - $ref: '#/components/parameters/revision_number'
+      - $ref: '#/components/parameters/resource_type'
+      - $ref: '#/components/parameters/resource_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environments/{env_name}/resourcefiles":
+    post:
+      tags: ["Resource Files"]
+      summary: Import a resource file for an environment
+      description: Import a resource file for an environment
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["Resource Files"]
+      summary: List resource files in an environment
+      description: List resource files in an environment
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environments/{env_name}/resourcefiles/{resource_type}/{resource_name}":
+    put:
+      tags: ["Resource Files"]
+      summary: Update a resource file in an environment (file upload)
+      description: Update a resource file in an environment (file upload)
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/resource_type'
+      - $ref: '#/components/parameters/resource_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    delete:
+      tags: ["Resource Files"]
+      summary: Delete a resource file from an environment
+      description: Delete a resource file from an environment
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/resource_type'
+      - $ref: '#/components/parameters/resource_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["Resource Files"]
+      summary: Get a resource file from an environment
+      description: Get a resource file from an environment
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/resource_type'
+      - $ref: '#/components/parameters/resource_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/resourcefiles":
+    get:
+      tags: ["Resource Files"]
+      summary: List resource files in an organization
+      description: List resource files in an organization
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    post:
+      tags: ["Resource Files"]
+      summary: Import a resource file for an organization
+      description: Import a resource file for an organization
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/resourcefiles/{resource_type}/{resource_name}":
+    get:
+      tags: ["Resource Files"]
+      summary: Get a resource file for an organization
+      description: Get a resource file for an organization
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/resource_type'
+      - $ref: '#/components/parameters/resource_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    put:
+      tags: ["Resource Files"]
+      summary: Update a resource file in an organization (file upload)
+      description: Update a resource file in an organization (file upload)
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/resource_type'
+      - $ref: '#/components/parameters/resource_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    delete:
+      tags: ["Resource Files"]
+      summary: Delete a resource file from an organization
+      description: Delete a resource file from an organization
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/resource_type'
+      - $ref: '#/components/parameters/resource_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/userroles":
+    get:
+      tags: ["User Roles"]
+      summary: List Roles of Organization
+      description: List Roles of Organization
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    post:
+      tags: ["User Roles"]
+      summary: Create Roles in an Organization
+      description: Create Roles in an Organization
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/userroles/{role_name}":
+    get:
+      tags: ["User Roles"]
+      summary: Get Role
+      description: Get Role
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/role_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    delete:
+      tags: ["User Roles"]
+      summary: Delete Role
+      description: Delete Role
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/role_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/userroles/{role_name}/users":
+    get:
+      tags: ["User Roles"]
+      summary: Get users for a role
+      description: Get users for a role
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/role_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    post:
+      tags: ["User Roles"]
+      summary: Add a user to a role
+      description: Add a user to a role
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/role_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/userroles/{role_name}/users/{user_email}":
+    delete:
+      tags: ["User Roles"]
+      summary: Remove user membership in role
+      description: Remove user membership in role
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/role_name'
+      - $ref: '#/components/parameters/user_email'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["User Roles"]
+      summary: Verify user role membership
+      description: Verify user role membership
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/role_name'
+      - $ref: '#/components/parameters/user_email'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/developers/{developer_email_or_id}/apps/{app_name}/keys/create":
+    post:
+      tags: ["Developer","Developer App", "Consumer Key"]
+      summary: Create a consumer key and secret
+      description: Create a consumer key and secret
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/developer_email_or_id'
+      - $ref: '#/components/parameters/app_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/developers/{developer_email_or_id}/apps/{app_name}/keys/{consumer_key}":
+    get:
+      tags: ["Developer","Developer App", "Consumer Key"]
+      summary: Get Key Details for a Developer App
+      description: Get Key Details for a Developer App
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/developer_email_or_id'
+      - $ref: '#/components/parameters/app_name'
+      - $ref: '#/components/parameters/consumer_key'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    post:
+      tags: ["Developer","Developer App", "Consumer Key"]
+      summary: Approve or Revoke Specific Key of Developer App
+      description: Approve or Revoke Specific Key of Developer App
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/developer_email_or_id'
+      - $ref: '#/components/parameters/app_name'
+      - $ref: '#/components/parameters/consumer_key'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    delete:
+      tags: ["Developer","Developer App", "Consumer Key"]
+      summary: Delete Key for a Developer App
+      description: Delete Key for a Developer App
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/developer_email_or_id'
+      - $ref: '#/components/parameters/app_name'
+      - $ref: '#/components/parameters/consumer_key'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/developers/{developer_email_or_id}/apps/{app_name}/keys/{consumer_key}/apiproducts/{apiproduct_name}":
+    delete:
+      tags: ["Developer","Developer App", "Consumer Key", "API Product"]
+      summary: Remove API Product for a Specific Key
+      description: Remove API Product for a Specific Key
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/developer_email_or_id'
+      - $ref: '#/components/parameters/app_name'
+      - $ref: '#/components/parameters/consumer_key'
+      - $ref: '#/components/parameters/apiproduct_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    post:
+      tags: ["Developer","Developer App", "Consumer Key", "API Product"]
+      summary: Approve or Revoke API Product for an API Key
+      description: Approve or Revoke API Product for an API Key
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/developer_email_or_id'
+      - $ref: '#/components/parameters/app_name'
+      - $ref: '#/components/parameters/consumer_key'
+      - $ref: '#/components/parameters/apiproduct_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/companies":
+    post:
+      tags: ["Company"]
+      summary: Create Company
+      description: Create Company
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["Company"]
+      summary: List Companies
+      description: List Companies
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/companies/{company_name}":
+    get:
+      tags: ["Company"]
+      summary: Get Company Details
+      description: Get Company Details
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/company_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    delete:
+      tags: ["Company"]
+      summary: Delete Company
+      description: Delete Company
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/company_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    put:
+      tags: ["Company"]
+      summary: Set the Status of a Company
+      description: Set the Status of a Company
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/company_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/apis/{api_name}/keyvaluemaps":
+    post:
+      tags: ["Key Value Map"]
+      summary: Create KeyValueMap in an API proxy
+      description: Create KeyValueMap in an API proxy
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/api_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["Key Value Map"]
+      summary: List KeyValueMaps for an API proxy
+      description: List KeyValueMaps for an API proxy
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/api_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/apis/{api_name}/keyvaluemaps/{map_name}":
+    delete:
+      tags: ["Key Value Map"]
+      summary: Delete KeyValueMap from an API proxy
+      description: Delete KeyValueMap from an API proxy
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/api_name'
+      - $ref: '#/components/parameters/map_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["Key Value Map"]
+      summary: Get KeyValueMap in an API proxy
+      description: Get KeyValueMap in an API proxy
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/api_name'
+      - $ref: '#/components/parameters/map_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    post:
+      tags: ["Key Value Map"]
+      summary: Update KeyValueMap in an API proxy
+      description: Update KeyValueMap in an API proxy
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/api_name'
+      - $ref: '#/components/parameters/map_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/apis/{api_name}/keyvaluemaps/{map_name}/entries":
+    post:
+      tags: ["Key Value Map"]
+      summary: Create an entry in an API proxy-scoped KVM (CPS)
+      description: Create an entry in an API proxy-scoped KVM (CPS)
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/api_name'
+      - $ref: '#/components/parameters/map_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/apis/{api_name}/keyvaluemaps/{map_name}/entries/{entry_name}":
+    post:
+      tags: ["Key Value Map"]
+      summary: Update an entry in an API proxy-scoped KVM (CPS)
+      description: Update an entry in an API proxy-scoped KVM (CPS)
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/api_name'
+      - $ref: '#/components/parameters/map_name'
+      - $ref: '#/components/parameters/entry_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["Key Value Map"]
+      summary: Get a key's value in a proxy-scoped KeyValueMap
+      description: Get a key's value in a proxy-scoped KeyValueMap
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/api_name'
+      - $ref: '#/components/parameters/map_name'
+      - $ref: '#/components/parameters/entry_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    delete:
+      tags: ["Key Value Map"]
+      summary: Delete a key's value from an API proxy KVM
+      description: Delete a key's value from an API proxy KVM
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/api_name'
+      - $ref: '#/components/parameters/map_name'
+      - $ref: '#/components/parameters/entry_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/apis/{api_name}/keyvaluemaps/{map_name}/keys":
+    get:
+      tags: ["Key Value Map"]
+      summary: List keys in an API proxy KeyValueMap (CPS)
+      description: List keys in an API proxy KeyValueMap (CPS)
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/api_name'
+      - $ref: '#/components/parameters/map_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/apis/{api_name}/revisions/{revision_number}/keyvaluemaps":
+    post:
+      tags: ["Key Value Map"]
+      summary: Create KeyValueMap in an API proxy revision (CPS)
+      description: Create KeyValueMap in an API proxy revision (CPS)
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/api_name'
+      - $ref: '#/components/parameters/revision_number'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/apis/{api_name}/revisions/{revision_number}/keyvaluemaps/{map_name}/entries":
+    post:
+      tags: ["Key Value Map"]
+      summary: Create an entry in an API proxy revision-scoped KVM (CPS)
+      description: Create an entry in an API proxy revision-scoped KVM (CPS)
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/api_name'
+      - $ref: '#/components/parameters/revision_number'
+      - $ref: '#/components/parameters/map_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/apis/{api_name}/revisions/{revision_number}/keyvaluemaps/{map_name}/entries/{entry_name}":
+    post:
+      tags: ["Key Value Map"]
+      summary: Update an entry in an API proxy revision-scoped KVM (CPS)
+      description: Update an entry in an API proxy revision-scoped KVM (CPS)
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/api_name'
+      - $ref: '#/components/parameters/revision_number'
+      - $ref: '#/components/parameters/map_name'
+      - $ref: '#/components/parameters/entry_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/apis/{api_name}/revisions/{revision_number}/keyvaluemaps/{map_name}/keys":
+    get:
+      tags: ["Key Value Map"]
+      summary: List keys in an API proxy revision KeyValueMap (CPS)
+      description: List keys in an API proxy revision KeyValueMap (CPS)
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/api_name'
+      - $ref: '#/components/parameters/revision_number'
+      - $ref: '#/components/parameters/map_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environments/{env_name}/keyvaluemaps":
+    post:
+      tags: ["Key Value Map"]
+      summary: Create KeyValueMap in an Environment
+      description: Create KeyValueMap in an Environment
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["Key Value Map"]
+      summary: List KeyValueMaps in an Environment
+      description: List KeyValueMaps in an Environment
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environments/{env_name}/keyvaluemaps/{map_name}":
+    get:
+      tags: ["Key Value Map"]
+      summary: Get KeyValueMap in an Environment
+      description: Get KeyValueMap in an Environment
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/map_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    delete:
+      tags: ["Key Value Map"]
+      summary: Delete KeyValueMap from an Environment
+      description: Delete KeyValueMap from an Environment
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/map_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    post:
+      tags: ["Key Value Map"]
+      summary: Update KeyValueMap in an Environment
+      description: Update KeyValueMap in an Environment
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/map_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environments/{env_name}/keyvaluemaps/{map_name}/entries":
+    post:
+      tags: ["Key Value Map"]
+      summary: Create an entry in an environment-scoped KVM (CPS)
+      description: Create an entry in an environment-scoped KVM (CPS)
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/map_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environments/{env_name}/keyvaluemaps/{map_name}/entries/{entry_name}":
+    post:
+      tags: ["Key Value Map"]
+      summary: Update an entry in an environment-scoped KVM (CPS)
+      description: Update an entry in an environment-scoped KVM (CPS)
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/map_name'
+      - $ref: '#/components/parameters/entry_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    delete:
+      tags: ["Key Value Map"]
+      summary: Delete KeyValueMap Entry in an Environment
+      description: Delete KeyValueMap Entry in an Environment
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/map_name'
+      - $ref: '#/components/parameters/entry_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["Key Value Map"]
+      summary: Get a key's value in an environment-scoped KeyValueMap
+      description: Get a key's value in an environment-scoped KeyValueMap
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/map_name'
+      - $ref: '#/components/parameters/entry_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environments/{env_name}/keyvaluemaps/{map_name}/keys":
+    get:
+      tags: ["Key Value Map"]
+      summary: List keys in an environment KeyValueMap (CPS)
+      description: List keys in an environment KeyValueMap (CPS)
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/map_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/keyvaluemaps":
+    post:
+      tags: ["Key Value Map"]
+      summary: Create KeyValueMap in an Organization
+      description: Create KeyValueMap in an Organization
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["Key Value Map"]
+      summary: List KeyValueMaps in an Organization
+      description: List KeyValueMaps in an Organization
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/keyvaluemaps/{map_name}":
+    get:
+      tags: ["Key Value Map"]
+      summary: Get KeyValueMap in an Organization
+      description: Get KeyValueMap in an Organization
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/map_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    post:
+      tags: ["Key Value Map"]
+      summary: Update KeyValueMap in an Organization
+      description: Update KeyValueMap in an Organization
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/map_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    delete:
+      tags: ["Key Value Map"]
+      summary: Delete KeyValueMap from an Organization
+      description: Delete KeyValueMap from an Organization
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/map_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/keyvaluemaps/{map_name}/entries":
+    post:
+      tags: ["Key Value Map"]
+      summary: Create an entry in an organization-scoped KVM (CPS)
+      description: Create an entry in an organization-scoped KVM (CPS)
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/map_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/keyvaluemaps/{map_name}/entries/{entry_name}":
+    delete:
+      tags: ["Key Value Map"]
+      summary: Delete a key's value in an organization-scoped KVM
+      description: Delete a key's value in an organization-scoped KVM
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/map_name'
+      - $ref: '#/components/parameters/entry_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["Key Value Map"]
+      summary: Get a key's value in an organization-scoped KeyValueMap
+      description: Get a key's value in an organization-scoped KeyValueMap
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/map_name'
+      - $ref: '#/components/parameters/entry_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    post:
+      tags: ["Key Value Map"]
+      summary: Update an entry in an organization-scoped KVM (CPS)
+      description: Update an entry in an organization-scoped KVM (CPS)
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/map_name'
+      - $ref: '#/components/parameters/entry_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/keyvaluemaps/{map_name}/keys":
+    get:
+      tags: ["Key Value Map"]
+      summary: List keys in an organization KeyValueMap (CPS)
+      description: List keys in an organization KeyValueMap (CPS)
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/map_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/userroles/{role_name}/permissions":
+    post:
+      tags: ["User Roles","Permissions"]
+      summary: Add Permissions for Resource to a Role
+      description: Add Permissions for Resource to a Role
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/role_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["User Roles","Permissions"]
+      summary: List Permissions for All Resources Associated with a Role
+      description: List Permissions for All Resources Associated with a Role
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/role_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/userroles/{role_name}/permissions/{permission}":
+    delete:
+      tags: ["User Roles","Permissions"]
+      summary: Delete Permission for Resource
+      description: Delete Permission for Resource
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/role_name'
+      - $ref: '#/components/parameters/permission'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["User Roles","Permissions"]
+      summary: Verify User Role Permission for Resource
+      description: Verify User Role Permission for Resource
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/role_name'
+      - $ref: '#/components/parameters/permission'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/userroles/{role_name}/resourcepermissions":
+    post:
+      tags: ["User Roles","Permissions"]
+      summary: Add Multiple Resource Permissions for Resource
+      description: Add Multiple Resource Permissions for Resource
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/role_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/companies/{company_name}/apps":
+    post:
+      tags: ["Company","Company App"]
+      summary: Create Company App
+      description: Create Company App
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/company_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["Company","Company App"]
+      summary: List Company Apps
+      description: List Company Apps
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/company_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/companies/{company_name}/apps/{app_name}":
+    delete:
+      tags: ["Company","Company App"]
+      summary: Delete Company App
+      description: Delete Company App
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/company_name'
+      - $ref: '#/components/parameters/app_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    put:
+      tags: ["Company","Company App"]
+      summary: Update Company App
+      description: Update Company App
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/company_name'
+      - $ref: '#/components/parameters/app_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["Company","Company App"]
+      summary: Get Company App Details
+      description: Get Company App Details
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/company_name'
+      - $ref: '#/components/parameters/app_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/analytics/groups/ax/{group_name}/scopes":
+    delete:
+      tags: ["Analytics"]
+      summary: Remove analytics information about an environment
+      description: Remove analytics information about an environment
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/group_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environments/{env_name}/analytics/admin":
+    post:
+      tags: ["Analytics"]
+      summary: Enable analytics for an environment
+      description: Enable analytics for an environment
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environments/{env_name}/stats/{dimension_name}":
+    get:
+      tags: ["Analytics"]
+      summary: Get metrics organized by dimensions
+      description: Get metrics organized by dimensions
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/dimension_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/stats/":
+    get:
+      tags: ["Analytics"]
+      summary: Get API message counts
+      description: Get API message counts
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/stats/preferences/reports/dailysummaryreport":
+    get:
+      tags: ["Analytics"]
+      summary: Subscribe or Unsubscribe from Analytics Report
+      description: Subscribe or Unsubscribe from Analytics Report
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/stats/preferences/reports/dailysummaryreport/users":
+    get:
+      tags: ["Analytics"]
+      summary: Get List of Subscribed and Unsubscribed Users
+      description: Get List of Subscribed and Unsubscribed Users
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/apps":
+    get:
+      tags: ["Developer App"]
+      summary: List App IDs in an Organization by App Status
+      description: List App IDs in an Organization by App Status
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/apps/{app_id}":
+    get:
+      tags: ["Developer App"]
+      summary: Get App in an Organization by App ID
+      description: Get App in an Organization by App ID
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/app_id'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/audits/organizations/{org_name}":
+    get:
+      tags: ["Audit"]
+      summary: List Audit Entries for an Organization
+      description: List Audit Entries for an Organization
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/audits/organizations/{org_name}/apiproducts":
+    get:
+      tags: ["Audit"]
+      summary: List Audit Entries for all API Products in an Organization
+      description: List Audit Entries for all API Products in an Organization
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/audits/organizations/{org_name}/apiproducts/{apiproduct_name}":
+    get:
+      tags: ["Audit"]
+      summary: List Audit Entries for an API Product
+      description: List Audit Entries for an API Product
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/apiproduct_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/audits/organizations/{org_name}/apis":
+    get:
+      tags: ["Audit"]
+      summary: List Audit Entries for All API Proxies
+      description: List Audit Entries for All API Proxies
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/audits/organizations/{org_name}/apis/{api_name}":
+    get:
+      tags: ["Audit"]
+      summary: List Audit Entries for an API Proxy
+      description: List Audit Entries for an API Proxy
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/api_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/audits/organizations/{org_name}/developers":
+    get:
+      tags: ["Audit"]
+      summary: List Audit Entries for all Developers in an Organization
+      description: List Audit Entries for all Developers in an Organization
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/audits/organizations/{org_name}/developers/{developer_email}":
+    get:
+      tags: ["Audit"]
+      summary: List Audit Entries for a Developer
+      description: List Audit Entries for a Developer
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/developer_email'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/audits/organizations/{org_name}/developers/{developer_email}/apps":
+    get:
+      tags: ["Audit"]
+      summary: List Audit Entries for all Developer Apps
+      description: List Audit Entries for all Developer Apps
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/developer_email'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/audits/organizations/{org_name}/developers/{developer_email}/apps/{app_name}":
+    get:
+      tags: ["Audit"]
+      summary: List Audit Entries for a Developer App
+      description: List Audit Entries for a Developer App
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/developer_email'
+      - $ref: '#/components/parameters/app_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/audits/users/{user_email}":
+    get:
+      tags: ["Audit"]
+      summary: List Audit Entries for a User
+      description: List Audit Entries for a User
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/user_email'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/apis":
+    post:
+      tags: ["API Proxy"]
+      summary: Create an API Proxy
+      description: Create an API Proxy
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["API Proxy"]
+      summary: List API Proxies
+      description: List API Proxies
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/apis/{api_name}":
+    delete:
+      tags: ["API Proxy"]
+      summary: Delete API Proxy
+      description: Delete API Proxy
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/api_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["API Proxy"]
+      summary: Get API Proxy
+      description: Get API Proxy
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/api_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/apis/{api_name}/deployments":
+    get:
+      tags: ["API Proxy"]
+      summary: Get API Proxy Deployment Details
+      description: Get API Proxy Deployment Details
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/api_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/apis/{api_name}/revisions":
+    get:
+      tags: ["API Proxy"]
+      summary: List API proxy revisions
+      description: List API proxy revisions
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/api_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/apis/{api_name}/revisions/{revision_number}":
+    get:
+      tags: ["API Proxy"]
+      summary: Get an API proxy revision
+      description: Get an API proxy revision
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/api_name'
+      - $ref: '#/components/parameters/revision_number'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    post:
+      tags: ["API Proxy"]
+      summary: Update API Proxy Revision
+      description: Update API Proxy Revision
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/api_name'
+      - $ref: '#/components/parameters/revision_number'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    delete:
+      tags: ["API Proxy"]
+      summary: Delete API Proxy Revision
+      description: Delete API Proxy Revision
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/api_name'
+      - $ref: '#/components/parameters/revision_number'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/apis/{api_name}/revisions/{revision_number}/deployments":
+    post:
+      tags: ["API Proxy"]
+      summary: Force Undeploy API Proxy
+      description: Force Undeploy API Proxy
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/api_name'
+      - $ref: '#/components/parameters/revision_number'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["API Proxy"]
+      summary: Get API Proxy Revision Deployments
+      description: Get API Proxy Revision Deployments
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/api_name'
+      - $ref: '#/components/parameters/revision_number'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/deployments":
+    get:
+      tags: ["API Proxy"]
+      summary: Get all APIs deployed to an organization
+      description: Get all APIs deployed to an organization
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environments/{env_name}/apis/{api_name}/revisions/{revision_number}/deployments":
+    get:
+      tags: ["API Proxy"]
+      summary: Get Deployment Details for an API Proxy Revision in an Environment
+      description: Get Deployment Details for an API Proxy Revision in an Environment
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/api_name'
+      - $ref: '#/components/parameters/revision_number'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environments/{env_name}/vaults":
+    get:
+      tags: ["Vaults"]
+      summary: List Vaults in an Environment
+      description: List Vaults in an Environment
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    post:
+      tags: ["Vaults"]
+      summary: Create a Vault in an Environment
+      description: Create a Vault in an Environment
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environments/{env_name}/vaults/{vault_name_in_env}":
+    delete:
+      tags: ["Vaults"]
+      summary: Delete a Vault in an Environment
+      description: Delete a Vault in an Environment
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/vault_name_in_env'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environments/{env_name}/vaults/{vault_name_in_env}/entries":
+    post:
+      tags: ["Vaults"]
+      summary: Create a Vault Entry in an Environment
+      description: Create a Vault Entry in an Environment
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/vault_name_in_env'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/vaults":
+    get:
+      tags: ["Vaults"]
+      summary: List Vaults in an Org
+      description: List Vaults in an Org
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    post:
+      tags: ["Vaults"]
+      summary: Create a Vault in an Org
+      description: Create a Vault in an Org
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/vaults/{vault_name_in_org}":
+    delete:
+      tags: ["Vaults"]
+      summary: Delete a Vault in an Org
+      description: Delete a Vault in an Org
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/vault_name_in_org'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["Vaults"]
+      summary: List Entries in a Vault in an Org
+      description: List Entries in a Vault in an Org
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/vault_name_in_org'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/vaults/{vault_name_in_org}/entries":
+    post:
+      tags: ["Vaults"]
+      summary: Create a Vault Entry in an Org
+      description: Create a Vault Entry in an Org
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/vault_name_in_org'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/developers/{developer_email}/apps/{app_name}/keys/{consumer_key}/oauth1accesstokens":
+    get:
+      tags: ["OAuth 1.0a"]
+      summary: Get OAuth 1.0a Access Tokens Count for a Developer App Key
+      description: Get OAuth 1.0a Access Tokens Count for a Developer App Key
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/developer_email'
+      - $ref: '#/components/parameters/app_name'
+      - $ref: '#/components/parameters/consumer_key'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/developers/{developer_email_or_id}/apps":
+    post:
+      tags: ["Developer App"]
+      summary: Create Developer App
+      description: Create Developer App
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/developer_email_or_id'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["Developer App"]
+      summary: List Developer Apps
+      description: List Developer Apps
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/developer_email_or_id'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/developers/{developer_email_or_id}/apps/{app_name}":
+    get:
+      tags: ["Developer App"]
+      summary: Get Developer App Details
+      description: Get Developer App Details
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/developer_email_or_id'
+      - $ref: '#/components/parameters/app_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    put:
+      tags: ["Developer App"]
+      summary: Update Developer App
+      description: Update Developer App
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/developer_email_or_id'
+      - $ref: '#/components/parameters/app_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    delete:
+      tags: ["Developer App"]
+      summary: Delete Developer App
+      description: Delete Developer App
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/developer_email_or_id'
+      - $ref: '#/components/parameters/app_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    post:
+      tags: ["Developer App"]
+      summary: Generate a new key pair for a developer app
+      description: Generate a new key pair for a developer app
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/developer_email_or_id'
+      - $ref: '#/components/parameters/app_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/developers/{developer_email_or_id}/apps/{app_name}/attributes":
+    post:
+      tags: ["Developer App"]
+      summary: Update all App Attributes
+      description: Update all App Attributes
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/developer_email_or_id'
+      - $ref: '#/components/parameters/app_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["Developer App"]
+      summary: Get all App Attributes
+      description: Get all App Attributes
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/developer_email_or_id'
+      - $ref: '#/components/parameters/app_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/developers/{developer_email_or_id}/apps/{app_name}/attributes/{attribute_name}":
+    post:
+      tags: ["Developer App"]
+      summary: Update an App Attribute
+      description: Update an App Attribute
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/developer_email_or_id'
+      - $ref: '#/components/parameters/app_name'
+      - $ref: '#/components/parameters/attribute_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    delete:
+      tags: ["Developer App"]
+      summary: Delete App Attribute
+      description: Delete App Attribute
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/developer_email_or_id'
+      - $ref: '#/components/parameters/app_name'
+      - $ref: '#/components/parameters/attribute_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["Developer App"]
+      summary: Get App Attribute
+      description: Get App Attribute
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/developer_email_or_id'
+      - $ref: '#/components/parameters/app_name'
+      - $ref: '#/components/parameters/attribute_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/apis/{api_name}/revisions/{revision_number}/npm":
+    get:
+      tags: ["Nodejs"]
+      summary: Gets npm dependencies for an API Proxy.
+      description: Gets npm dependencies for an API Proxy.
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/api_name'
+      - $ref: '#/components/parameters/revision_number'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    post:
+      tags: ["Nodejs"]
+      summary: Manage Node Packaged Modules
+      description: Manage Node Packaged Modules
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/api_name'
+      - $ref: '#/components/parameters/revision_number'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/developers/{developer_email_or_id}/appfamilies":
+    get:
+      tags: ["Developer App Families, Developer App"]
+      summary: List Developer App Families
+      description: List Developer App Families
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/developer_email_or_id'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    post:
+      tags: ["Developer App Families, Developer App"]
+      summary: Create Developer App Family
+      description: Create Developer App Family
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/developer_email_or_id'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/developers/{developer_email_or_id}/appfamilies/{appfamily_name}":
+    post:
+      tags: ["Developer App Families, Developer App"]
+      summary: Update Developer App Family
+      description: Update Developer App Family
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/developer_email_or_id'
+      - $ref: '#/components/parameters/appfamily_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    delete:
+      tags: ["Developer App Families, Developer App"]
+      summary: Delete Developer App Family
+      description: Delete Developer App Family
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/developer_email_or_id'
+      - $ref: '#/components/parameters/appfamily_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["Developer App Families, Developer App"]
+      summary: Get Developer App Family
+      description: Get Developer App Family
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/developer_email_or_id'
+      - $ref: '#/components/parameters/appfamily_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/developers/{developer_email_or_id}/appfamilies/{appfamily_name}/apps/{app_name}":
+    delete:
+      tags: ["Developer App Families, Developer App"]
+      summary: Remove Developer App from Family
+      description: Remove Developer App from Family
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/developer_email_or_id'
+      - $ref: '#/components/parameters/appfamily_name'
+      - $ref: '#/components/parameters/app_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environments":
+    post:
+      tags: ["Environment"]
+      summary: Create Environment
+      description: Create Environment
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["Environment"]
+      summary: Get Environment Names
+      description: Get Environment Names
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environments/{env_name}":
+    post:
+      tags: ["Environment"]
+      summary: Update an environment
+      description: Update an environment
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    delete:
+      tags: ["Environment"]
+      summary: Delete an environment
+      description: Delete an environment
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["Environment"]
+      summary: Get Environment Details
+      description: Get Environment Details
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environments/{env_name}/apis/{api_name}/deployments":
+    get:
+      tags: ["Environment","API Proxy","Deployment"]
+      summary: Get Deployment Details for an API Proxy in an Environment
+      description: Get Deployment Details for an API Proxy in an Environment
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/api_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environments/{env_name}/deployments":
+    get:
+      tags: ["Environment","API Proxy","Deployment"]
+      summary: Get API Proxy Deployments for an Environment
+      description: Get API Proxy Deployments for an Environment
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environments/{env_name}/servers":
+    post:
+      tags: ["Environment","API Proxy","Servers"]
+      summary: Disassociate an environment with a Message Processor
+      description: Disassociate an environment with a Message Processor
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["Environment","API Proxy","Servers"]
+      summary: Get servers associated with an environment
+      description: Get servers associated with an environment
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/companies/{company_name}/appfamilies":
+    get:
+      tags: ["Company App Families", "Company App"]
+      summary: List Company App Families
+      description: List Company App Families
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/company_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    post:
+      tags: ["Company App Families", "Company App"]
+      summary: Create Company App Family
+      description: Create Company App Family
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/company_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/companies/{company_name}/appfamilies/{appfamily_name}":
+    get:
+      tags: ["Company App Families", "Company App"]
+      summary: Get Company App Family
+      description: Get Company App Family
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/company_name'
+      - $ref: '#/components/parameters/appfamily_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    post:
+      tags: ["Company App Families", "Company App"]
+      summary: Update Company App Family
+      description: Update Company App Family
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/company_name'
+      - $ref: '#/components/parameters/appfamily_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    delete:
+      tags: ["Company App Families", "Company App"]
+      summary: Delete Company App Family
+      description: Delete Company App Family
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/company_name'
+      - $ref: '#/components/parameters/appfamily_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/companies/{company_name}/appfamilies/{appfamily_name}/apps/{app_name}":
+    delete:
+      tags: ["Company App Families", "Company App"]
+      summary: Remove Company App from Family
+      description: Remove Company App from Family
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/company_name'
+      - $ref: '#/components/parameters/appfamily_name'
+      - $ref: '#/components/parameters/app_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/companies/{company_name}/apps/{app_name}/keys/{consumer_key}":
+    delete:
+      tags: [Company App"]
+      summary: Delete Key for a Company App
+      description: Delete Key for a Company App
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/company_name'
+      - $ref: '#/components/parameters/app_name'
+      - $ref: '#/components/parameters/consumer_key'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: [Company App"]
+      summary: Get Key Information for a Company App
+      description: Get Key Information for a Company App
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/company_name'
+      - $ref: '#/components/parameters/app_name'
+      - $ref: '#/components/parameters/consumer_key'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    post:
+      tags: [Company App"]
+      summary: Approve or Revoke a Specific Key of Company App
+      description: Approve or Revoke a Specific Key of Company App
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/company_name'
+      - $ref: '#/components/parameters/app_name'
+      - $ref: '#/components/parameters/consumer_key'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environments/{env_name}/caches":
+    get:
+      tags: ["Cache"]
+      summary: List caches in an environment
+      description: List caches in an environment
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    post:
+      tags: ["Cache"]
+      summary: Create a cache in an environment
+      description: Create a cache in an environment
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environments/{env_name}/caches/{cache_name}":
+    put:
+      tags: ["Cache"]
+      summary: Update a cache in an environment
+      description: Update a cache in an environment
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/cache_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    delete:
+      tags: ["Cache"]
+      summary: Delete a cache
+      description: Delete a cache
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/cache_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["Cache"]
+      summary: Get information about a cache
+      description: Get information about a cache
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/cache_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environments/{env_name}/caches/{cache_name}/entries":
+    post:
+      tags: ["Cache"]
+      summary: Clear all cache entries
+      description: Clear all cache entries
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/cache_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environments/{env_name}/caches/{cache_name}/entries/{entry}":
+    post:
+      tags: ["Cache"]
+      summary: Clear a cache entry
+      description: Clear a cache entry
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/cache_name'
+      - $ref: '#/components/parameters/entry'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/developers":
+    get:
+      tags: ["Developer"]
+      summary: List Developers
+      description: List Developers
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    post:
+      tags: ["Developer"]
+      summary: Create Developer
+      description: Create Developer
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/developers/{developer_email_or_id}":
+    get:
+      tags: ["Developer"]
+      summary: Get Developer
+      description: Get Developer
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/developer_email_or_id'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    delete:
+      tags: ["Developer"]
+      summary: Delete Developer
+      description: Delete Developer
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/developer_email_or_id'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    post:
+      tags: ["Developer"]
+      summary: Set Developer Status
+      description: Set Developer Status
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/developer_email_or_id'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    put:
+      tags: ["Developer"]
+      summary: Update Developer
+      description: Update Developer
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/developer_email_or_id'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/developers/{developer_email_or_id}/attributes":
+    get:
+      tags: ["Developer"]
+      summary: Get all Developer Attributes
+      description: Get all Developer Attributes
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/developer_email_or_id'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    post:
+      tags: ["Developer"]
+      summary: Update all Developer Attributes
+      description: Update all Developer Attributes
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/developer_email_or_id'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/developers/{developer_email_or_id}/attributes/{attribute_name}":
+    get:
+      tags: ["Developer"]
+      summary: Get Developer Attribute
+      description: Get Developer Attribute
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/developer_email_or_id'
+      - $ref: '#/components/parameters/attribute_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    delete:
+      tags: ["Developer"]
+      summary: Delete Developer Attribute
+      description: Delete Developer Attribute
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/developer_email_or_id'
+      - $ref: '#/components/parameters/attribute_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    post:
+      tags: ["Developer"]
+      summary: Update a Developer Attribute
+      description: Update a Developer Attribute
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/developer_email_or_id'
+      - $ref: '#/components/parameters/attribute_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environments/{env_name}/apis/{api_name}/revisions/{revision_number}/debugsessions":
+    get:
+      tags: ["Debug Sessions"]
+      summary: List debug sessions
+      description: List debug sessions
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/api_name'
+      - $ref: '#/components/parameters/revision_number'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    post:
+      tags: ["Debug Sessions"]
+      summary: Create a debug session
+      description: Create a debug session
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/api_name'
+      - $ref: '#/components/parameters/revision_number'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environments/{env_name}/apis/{api_name}/revisions/{revision_number}/debugsessions/{session_name}":
+    delete:
+      tags: ["Debug Sessions"]
+      summary: Delete debug session
+      description: Delete debug session
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/api_name'
+      - $ref: '#/components/parameters/revision_number'
+      - $ref: '#/components/parameters/session_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environments/{env_name}/apis/{api_name}/revisions/{revision_number}/debugsessions/{session_name}/data":
+    get:
+      tags: ["Debug Sessions"]
+      summary: Get debug session transaction IDs
+      description: Get debug session transaction IDs
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/api_name'
+      - $ref: '#/components/parameters/revision_number'
+      - $ref: '#/components/parameters/session_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environments/{env_name}/apis/{api_name}/revisions/{revision_number}/debugsessions/{session_name}/data/{transaction_id}": 
+    get:
+      tags: ["Debug Sessions"]
+      summary: Get debug session transaction data
+      description: Get debug session transaction data
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/api_name'
+      - $ref: '#/components/parameters/revision_number'
+      - $ref: '#/components/parameters/session_name'
+      - $ref: '#/components/parameters/transaction_id'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/reports":
+    get:
+      tags: ["Analytics", "Custom Reports"]
+      summary: Lists analytics report definitions
+      description: Lists analytics report definitions
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    post:
+      tags: ["Analytics", "Custom Reports"]
+      summary: Create an analytics report definition
+      description: Create an analytics report definition
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/reports/{report_name}":
+    put:
+      tags: ["Analytics", "Custom Reports"]
+      summary: Update an analytics report definition
+      description: Update an analytics report definition
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/report_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["Analytics", "Custom Reports"]
+      summary: Get an analytics report definition
+      description: Get an analytics report definition
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/report_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    delete:
+      tags: ["Analytics", "Custom Reports"]
+      summary: Delete an analytics report definition
+      description: Delete an analytics report definition
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/report_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/oauth2/refreshtokens/{refresh_token}":
+    post:
+      tags: ["OAuth 2.0"]
+      summary: Approve or revoke an OAuth 2.0 refresh token
+      description: Approve or revoke an OAuth 2.0 refresh token
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/refresh_token'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/oauth1/verifiers":
+    get:
+      tags: ["OAuth 1.0a"]
+      summary: List OAuth 1.0a Verifier Code
+      description: List OAuth 1.0a Verifier Code
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/oauth1/verifiers/{verifier_code}":
+    delete:
+      tags: ["OAuth 1.0a"]
+      summary: Delete OAuth 1.0a Verifier Code
+      description: Delete OAuth 1.0a Verifier Code
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/verifier_code'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["OAuth 1.0a"]
+      summary: Get OAuth 1.0a Verifier Code
+      description: Get OAuth 1.0a Verifier Code
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/verifier_code'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/oauth1/accesstokens":
+    get:
+      tags: ["OAuth 1.0a"]
+      summary: Get Count Of OAuth 1.0a Access Token
+      description: Get Count Of OAuth 1.0a Access Token
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/oauth1/accesstokens/{access_token}":
+    delete:
+      tags: ["OAuth 1.0a"]
+      summary: Delete OAuth 1.0a Access Token
+      description: Delete OAuth 1.0a Access Token
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/access_token'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    post:
+      tags: ["OAuth 1.0a"]
+      summary: Update OAuth 1.0a Access Token
+      description: Update OAuth 1.0a Access Token
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/access_token'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["OAuth 1.0a"]
+      summary: Get OAuth 1.0a Access Token
+      description: Get OAuth 1.0a Access Token
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/access_token'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/developers/{developer_email}/apps/{app_name}/oauth1accesstokens":
+    get:
+      tags: ["OAuth 1.0a"]
+      summary: Get Count of OAuth 1.0 Access Tokens for a Developer App
+      description: Get Count of OAuth 1.0 Access Tokens for a Developer App
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/developer_email'
+      - $ref: '#/components/parameters/app_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/developers/{developer_email}/apps/{app_name}/oauth2accesstokens":
+    get:
+      tags: ["OAuth 2.0"]
+      summary: Get a Count of OAuth 2.0 Access Tokens for a Developer App
+      description: Get a Count of OAuth 2.0 Access Tokens for a Developer App
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/developer_email'
+      - $ref: '#/components/parameters/app_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/companies/{company_name}/developers":
+    post:
+      tags: ["Company Developer"]
+      summary: Add or Update Company Developers
+      description: Add or Update Company Developers
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/company_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["Company Developer"]
+      summary: List Developers in Company
+      description: List Developers in Company
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/company_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/companies/{company_name}/developers/{developer_email}":
+    delete:
+      tags: ["Company Developer"]
+      summary: Remove Developer from Company
+      description: Remove Developer from Company
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/company_name'
+      - $ref: '#/components/parameters/developer_email'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/oauth1/requesttokens":
+    get:
+      tags: ["OAuth 1.0a"]
+      summary: List OAuth 1.0a Request Tokens
+      description: List OAuth 1.0a Request Tokens
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/oauth1/requesttokens/{request_token}":
+    delete:
+      tags: ["OAuth 1.0a"]
+      summary: Delete OAuth 1.0a Request Token
+      description: Delete OAuth 1.0a Request Token
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/request_token'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    post:
+      tags: ["OAuth 1.0a"]
+      summary: Approve or Revoke OAuth 1.0a Request Token
+      description: Approve or Revoke OAuth 1.0a Request Token
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/request_token'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["OAuth 1.0a"]
+      summary: Get OAuth 1.0a Request Token
+      description: Get OAuth 1.0a Request Token
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/request_token'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environments/{env_name}/virtualhosts":
+    post:
+      tags: ["Virtual Host"]
+      summary: Create a Virtual Host
+      description: Create a Virtual Host
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["Virtual Host"]
+      summary: List Virtual Hosts
+      description: List Virtual Hosts
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environments/{env_name}/virtualhosts/{virtualhost_name}":
+    get:
+      tags: ["Virtual Host"]
+      summary: Get Virtual Host
+      description: Get Virtual Host
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/virtualhost_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    put:
+      tags: ["Virtual Host"]
+      summary: Update a Virtual Host
+      description: Update a Virtual Host
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/virtualhost_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    delete:
+      tags: ["Virtual Host"]
+      summary: Delete a Virtual Host
+      description: Delete a Virtual Host
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/virtualhost_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations":
+    get:
+      tags: ["Organization"]
+      summary: Get Organizations
+      description: Get Organizations
+      operationId: ''
+      parameters: []
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    post:
+      tags: ["Organization"]
+      summary: Create an organization
+      description: Create an organization
+      operationId: ''
+      parameters: []
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}":
+    post:
+      tags: ["Organization"]
+      summary: Update organization properties
+      description: Update organization properties
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    delete:
+      tags: ["Organization"]
+      summary: Delete an organization
+      description: Delete an organization
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["Organization"]
+      summary: Get Organization
+      description: Get Organization
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/pods":
+    post:
+      tags: ["Organization","Pods"]
+      summary: Associate an organization with a pod
+      description: Associate an organization with a pod
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["Organization","Pods"]
+      summary: Get pods associated with an organization
+      description: Get pods associated with an organization
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/oauth2/authorizationcodes":
+    get:
+      tags: ["OAuth 2.0"]
+      summary: List OAuth 2.0 Authorization Codes
+      description: List OAuth 2.0 Authorization Codes
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/oauth2/authorizationcodes/{authorization_code}":
+    get:
+      tags: ["OAuth 2.0"]
+      summary: Get OAuth 2.0 Authorization Code
+      description: Get OAuth 2.0 Authorization Code
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/authorization_code'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    delete:
+      tags: ["OAuth 2.0"]
+      summary: Delete OAuth 2.0 Authorization Code
+      description: Delete OAuth 2.0 Authorization Code
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/authorization_code'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/apis/{api_name}/revisions/{revision_number}/policies":
+    post:
+      tags: ["Policy"]
+      summary: Create a policy for an API proxy revision
+      description: Create a policy for an API proxy revision
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/api_name'
+      - $ref: '#/components/parameters/revision_number'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["Policy"]
+      summary: List policies for an API proxy revision
+      description: List policies for an API proxy revision
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/api_name'
+      - $ref: '#/components/parameters/revision_number'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/apis/{api_name}/revisions/{revision_number}/policies/{policy_name}":
+    get:
+      tags: ["Policy"]
+      summary: Get a policy for an API proxy revision
+      description: Get a policy for an API proxy revision
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/api_name'
+      - $ref: '#/components/parameters/revision_number'
+      - $ref: '#/components/parameters/policy_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environments/{env_name}/targetservers":
+    post:
+      tags: ["Target Server"]
+      summary: Create a TargetServer
+      description: Create a TargetServer
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["Target Server"]
+      summary: List TargetServers in an environment
+      description: List TargetServers in an environment
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environments/{env_name}/targetservers/{targetserver_name}":
+    delete:
+      tags: ["Target Server"]
+      summary: Delete a TargetServer
+      description: Delete a TargetServer
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/targetserver_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    put:
+      tags: ["Target Server"]
+      summary: Update a TargetServer
+      description: Update a TargetServer
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/targetserver_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["Target Server"]
+      summary: Get TargetServer
+      description: Get TargetServer
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/targetserver_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/users":
+    get:
+      tags: ["Users"]
+      summary: List Users
+      description: List Users
+      operationId: ''
+      parameters: []
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    post:
+      tags: ["Users"]
+      summary: Create User
+      description: Create User
+      operationId: ''
+      parameters: []
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/users/{user_email}":
+    put:
+      tags: ["Users"]
+      summary: Update user
+      description: Update user
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/user_email'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["Users"]
+      summary: Get User
+      description: Get User
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/user_email'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    delete:
+      tags: ["Users"]
+      summary: Delete User
+      description: Delete User
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/user_email'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/users/{user_email}/status":
+    post:
+      tags: ["Users"]
+      summary: Unlock a user
+      description: Unlock a user
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/user_email'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environment/{env_name}/references":
+    get:
+      tags: ["References"]
+      summary: List all references
+      description: List all references
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    post:
+      tags: ["References"]
+      summary: Create reference
+      description: Create reference
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environments/{env_name}/references/{ref_name}":
+    delete:
+      tags: ["References"]
+      summary: Delete reference
+      description: Delete reference
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/ref_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    put:
+      tags: ["References"]
+      summary: Update reference
+      description: Update reference
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/ref_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    get:
+      tags: ["References"]
+      summary: Get reference
+      description: Get reference
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/ref_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environments/{env_name}/virtualhosts/{vhost_name}/sslinfo":
+    post:
+      tags: ["Virtual Host"]
+      summary: Update TLS configuration for a virtual host
+      description: Update TLS configuration for a virtual host
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/vhost_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environments/{env_name}/ldapresources":
+    get:
+      tags: ["LDAP"]
+      summary: List LDAP resources
+      description: List LDAP resources
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    post:
+      tags: ["LDAP"]
+      summary: Create LDAP Resource
+      description: Create LDAP Resource
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+  "/organizations/{org_name}/environments/{env_name}/ldapresources/{ldap_name}":
+    get:
+      tags: ["LDAP"]
+      summary: Get LDAP Resource
+      description: Get LDAP Resource
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/ldap_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    delete:
+      tags: ["LDAP"]
+      summary: Delete LDAP Resource
+      description: Delete LDAP Resource
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/ldap_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+    post:
+      tags: ["LDAP"]
+      summary: Update LDAP Resource
+      description: Update LDAP Resource
+      operationId: ''
+      parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/env_name'
+      - $ref: '#/components/parameters/ldap_name'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: bad input parameter
+components:
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+    oauth2:
+      type: oauth2
+      description: See https://docs.apigee.com/api-platform/system-administration/management-api-tokens
+      flows: 
+        password: 
+          tokenUrl: https://login.apigee.com/oauth/token
+  parameters:
+    org_name:
+      in: path
+      name: org_name
+      required: true
+      schema:
+        type: string
+      description: org_name
+    api_name:
+      in: path
+      name: api_name
+      required: true
+      schema:
+        type: string
+      description: api_name
+    maskconfig_name:
+      in: path
+      name: maskconfig_name
+      required: true
+      schema:
+        type: string
+      description: maskconfig_name
+    apiproduct_name:
+      in: path
+      name: apiproduct_name
+      required: true
+      schema:
+        type: string
+      description: apiproduct_name
+    attribute_name:
+      in: path
+      name: attribute_name
+      required: true
+      schema:
+        type: string
+      description: attribute_name
+    access_token:
+      in: path
+      name: access_token
+      required: true
+      schema:
+        type: string
+      description: access_token
+    env_name:
+      in: path
+      name: env_name
+      required: true
+      schema:
+        type: string
+      description: env_name
+    keystore_name:
+      in: path
+      name: keystore_name
+      required: true
+      schema:
+        type: string
+      description: keystore_name
+    alias_name:
+      in: path
+      name: alias_name
+      required: true
+      schema:
+        type: string
+      description: alias_name
+    cert_name:
+      in: path
+      name: cert_name
+      required: true
+      schema:
+        type: string
+      description: cert_name
+    revision_number:
+      in: path
+      name: revision_number
+      required: true
+      schema:
+        type: string
+      description: revision_number
+    resource_type:
+      in: path
+      name: resource_type
+      required: true
+      schema:
+        type: string
+      description: resource_type
+    resource_name:
+      in: path
+      name: resource_name
+      required: true
+      schema:
+        type: string
+      description: resource_name
+    role_name:
+      in: path
+      name: role_name
+      required: true
+      schema:
+        type: string
+      description: role_name
+    user_email:
+      in: path
+      name: user_email
+      required: true
+      schema:
+        type: string
+      description: user_email
+    developer_email_or_id:
+      in: path
+      name: developer_email_or_id
+      required: true
+      schema:
+        type: string
+      description: developer_email_or_id
+    app_name:
+      in: path
+      name: app_name
+      required: true
+      schema:
+        type: string
+      description: app_name
+    consumer_key:
+      in: path
+      name: consumer_key
+      required: true
+      schema:
+        type: string
+      description: consumer_key
+    company_name:
+      in: path
+      name: company_name
+      required: true
+      schema:
+        type: string
+      description: company_name
+    map_name:
+      in: path
+      name: map_name
+      required: true
+      schema:
+        type: string
+      description: map_name
+    entry_name:
+      in: path
+      name: entry_name
+      required: true
+      schema:
+        type: string
+      description: entry_name
+    permission:
+      in: path
+      name: permission
+      required: true
+      schema:
+        type: string
+      description: permission
+    group_name:
+      in: path
+      name: group_name
+      required: true
+      schema:
+        type: string
+      description: group_name
+    developer_email:
+      in: path
+      name: developer_email
+      required: true
+      schema:
+        type: string
+      description: developer_email
+    vault_name_in_env:
+      in: path
+      name: vault_name_in_env
+      required: true
+      schema:
+        type: string
+      description: vault_name_in_env
+    vault_name_in_org:
+      in: path
+      name: vault_name_in_org
+      required: true
+      schema:
+        type: string
+      description: vault_name_in_org
+    revision_num:
+      in: path
+      name: revision_num
+      required: true
+      schema:
+        type: string
+      description: revision_num
+    appfamily_name:
+      in: path
+      name: appfamily_name
+      required: true
+      schema:
+        type: string
+      description: appfamily_name
+    cache_name:
+      in: path
+      name: cache_name
+      required: true
+      schema:
+        type: string
+      description: cache_name
+    entry:
+      in: path
+      name: entry
+      required: true
+      schema:
+        type: string
+      description: entry
+    session_name:
+      in: path
+      name: session_name
+      required: true
+      schema:
+        type: string
+      description: session_name
+    transaction_id:
+      in: path
+      name: transaction_id
+      required: true
+      schema:
+        type: string
+      description: transaction_id
+    qparam:
+      in: path
+      name: qparam
+      required: true
+      schema:
+        type: string
+      description: qparam
+    qpvalue:
+      in: path
+      name: qpvalue
+      required: true
+      schema:
+        type: string
+      description: qpvalue
+    report_name:
+      in: path
+      name: report_name
+      required: true
+      schema:
+        type: string
+      description: report_name
+    refresh_token:
+      in: path
+      name: refresh_token
+      required: true
+      schema:
+        type: string
+      description: refresh_token
+    verifier_code:
+      in: path
+      name: verifier_code
+      required: true
+      schema:
+        type: string
+      description: verifier_code
+    request_token:
+      in: path
+      name: request_token
+      required: true
+      schema:
+        type: string
+      description: request_token
+    virtualhost_name:
+      in: path
+      name: virtualhost_name
+      required: true
+      schema:
+        type: string
+      description: virtualhost_name
+    authorization_code:
+      in: path
+      name: authorization_code
+      required: true
+      schema:
+        type: string
+      description: authorization_code
+    policy_name:
+      in: path
+      name: policy_name
+      required: true
+      schema:
+        type: string
+      description: policy_name
+    targetserver_name:
+      in: path
+      name: targetserver_name
+      required: true
+      schema:
+        type: string
+      description: targetserver_name
+    ref_name:
+      in: path
+      name: ref_name
+      required: true
+      schema:
+        type: string
+      description: ref_name
+    vhost_name:
+      in: path
+      name: vhost_name
+      required: true
+      schema:
+        type: string
+      description: vhost_name
+    ldap_name:
+      in: path
+      name: ldap_name
+      required: true
+      schema:
+        type: string
+      description: ldap_name
+    dimension_name:
+      in: path
+      name: dimension_name
+      required: true
+      schema:
+        type: string
+      description: dimension_name
+    app_id:
+      in: path
+      name: app_id
+      required: true
+      schema:
+        type: string
+      description: app_id
